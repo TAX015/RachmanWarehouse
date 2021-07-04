@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/laporan"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.laporan.LaporanFragment">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="#090909" />
+                <LinearLayout
+                    android:background="#E9F44336"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:layout_weight="0.1"
+                        android:textSize="20dp"
+                        android:textColor="@android:color/black"
+                        android:text="Penjualan : " />
+
+                    <TextView
+                        android:id="@+id/txtPenjualan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.9"
+                        android:gravity="end"
+                        android:clickable="true"
+                        android:textStyle="bold"
+                        android:text="RP."
+                        android:textSize="20dp"
+                        android:textColor="@android:color/black"/>
+
+                </LinearLayout>
+
+                    <ListView
+                        android:id="@+id/lv1"
+                        android:divider="#F44336"
+                        android:dividerHeight="1dp"
+                        android:visibility="gone"
+                        android:background="@android:color/white"
+                        android:listSelector="#7AF44336"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="#090909" />
+                <LinearLayout
+                    android:background="#D39C27B0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.1"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:textColor="@android:color/black"
+                        android:text="Pembelian :" />
+
+                    <TextView
+                        android:id="@+id/txtPembelian"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.9"
+                        android:gravity="end"
+                        android:textStyle="bold"
+                        android:clickable="true"
+                        android:text="RP."
+                        android:textSize="20dp"
+                        android:textColor="@android:color/black"/>
+
+                </LinearLayout>
+
+                    <ListView
+                        android:id="@+id/lv2"
+                        android:divider="#F44336"
+                        android:dividerHeight="1dp"
+                        android:visibility="gone"
+                        android:background="@android:color/white"
+                        android:listSelector="#7AF44336"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="#090909" />
+
+                <LinearLayout
+                    android:background="#E92196F3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.1"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:text="Pemasukan lain-lain :" />
+
+                    <TextView
+                        android:id="@+id/txtMasukLain"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.9"
+                        android:clickable="true"
+                        android:textStyle="bold"
+                        android:gravity="end"
+                        android:text="RP."
+                        android:textSize="20dp"
+                        android:textColor="@android:color/black"/>
+
+                </LinearLayout>
+
+                    <ListView
+                        android:id="@+id/lv3"
+                        android:divider="#F44336"
+                        android:dividerHeight="1dp"
+                        android:visibility="gone"
+                        android:background="@android:color/white"
+                        android:listSelector="#7AF44336"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="#090909" />
+
+                <LinearLayout
+                    android:background="#E94CAF50"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.1"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:textColor="@android:color/black"
+                        android:text="Pengeluaran lain-lain :" />
+
+                    <TextView
+                        android:id="@+id/txtKeluarLain"
+                        android:clickable="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.9"
+                        android:gravity="end"
+                        android:text="RP."
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:textColor="@android:color/black"/>
+
+                </LinearLayout>
+
+                    <ListView
+                        android:id="@+id/lv4"
+                        android:divider="#F44336"
+                        android:dividerHeight="1dp"
+                        android:visibility="gone"
+                        android:background="@android:color/white"
+                        android:listSelector="#7AF44336"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="#090909" />
+
+                </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#F03F51B5"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:layout_gravity="bottom">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:text="Keuntungan : "/>
+
+        <TextView
+            android:id="@+id/txt_keuntungan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:text="Keuntungan"/>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/edit_Id_produk"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Spinner
+        android:id="@+id/edit_spinner_perusahaan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:popupBackground="@android:color/white"
+        android:layout_margin="10dp"/>
+
+    <EditText
+        android:id="@+id/edit_Id_admin"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/edit_nama_produk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nama Produk"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:layout_margin="10dp"
+        android:singleLine="true"
+        android:background="@android:color/white"
+        android:textColor="@android:color/black"/>
+
+    <EditText
+        android:id="@+id/edit_stok_produk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Stok"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:layout_margin="10dp"
+        android:singleLine="true"
+        android:background="@android:color/white"
+        android:textColor="@android:color/black"/>
+
+    <EditText
+        android:id="@+id/edit_beli"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Harga Beli"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:layout_margin="10dp"
+        android:singleLine="true"
+        android:background="@android:color/white"
+        android:textColor="@android:color/black"/>
+
+    <EditText
+        android:id="@+id/edit_jual"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Harga Jual"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:layout_margin="10dp"
+        android:singleLine="true"
+        android:background="@android:color/white"
+        android:textColor="@android:color/black"/>
+
+</LinearLayout>

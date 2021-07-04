@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/edit_list_transaksi"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/edit_data_transaksi"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Spinner
+        android:id="@+id/edit_spinner_transaksi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:popupBackground="@android:color/white"
+        android:layout_margin="10dp"/>
+
+
+    <EditText
+        android:id="@+id/editJumlah"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="jumlah beli"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:layout_margin="10dp"
+        android:singleLine="true"
+        android:inputType="number"
+        android:background="@android:color/white"
+        android:textColor="@android:color/black"/>
+
+</LinearLayout>

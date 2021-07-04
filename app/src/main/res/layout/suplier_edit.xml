@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/edit_Id_Suplier"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/suplier1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nama"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:layout_margin="10dp"
+        android:singleLine="true"
+        android:background="@android:color/white"
+        android:textColor="@android:color/black"
+        android:paddingBottom="15dp"/>
+
+    <EditText
+        android:id="@+id/suplierSales"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="sales"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:layout_margin="10dp"
+        android:singleLine="true"
+        android:background="@android:color/white"
+        android:textColor="@android:color/black"
+        android:paddingBottom="15dp"/>
+
+    <EditText
+        android:id="@+id/suplierKontak"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="kontak"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:layout_margin="10dp"
+        android:singleLine="true"
+        android:background="@android:color/white"
+        android:textColor="@android:color/black"
+        android:paddingBottom="15dp"/>
+
+    <EditText
+        android:id="@+id/suplierjenis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="jenis"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:layout_margin="10dp"
+        android:singleLine="true"
+        android:inputType="text"
+        android:background="@android:color/white"
+        android:textColor="@android:color/black"
+        android:paddingBottom="15dp"/>
+
+</LinearLayout>

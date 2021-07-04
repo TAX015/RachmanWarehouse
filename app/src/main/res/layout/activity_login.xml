@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background_login"
+    android:gravity="center"
+    tools:context=".Login">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/editTextUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#A8F3B1"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:textColor="#070707"
+            android:ems="10"
+            android:textAlignment="center"
+            android:inputType="textEmailAddress"
+            android:hint="Username" />
+
+        <EditText
+            android:id="@+id/editTextPass"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#A8F3B1"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:textColor="#0A0B0B"
+            android:ems="10"
+            android:textAlignment="center"
+            android:inputType="textPassword"
+            android:hint="Password" />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="LOGIN"
+            android:textSize="20dp"
+            android:textColor="#FBFBFB"
+            android:background="#03A9F4"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

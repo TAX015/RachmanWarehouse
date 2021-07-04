@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/txt_id"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/adminNamaEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nama"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:layout_margin="10dp"
+        android:singleLine="true"
+        android:background="@android:color/white"
+        android:textColor="@android:color/black"
+        android:paddingBottom="15dp"/>
+
+    <EditText
+        android:id="@+id/adminUserEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Username"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:singleLine="true"
+        android:layout_margin="10dp"
+        android:background="@android:color/white"
+        android:textColor="@android:color/black"
+        android:paddingBottom="15dp"/>
+
+    <EditText
+        android:id="@+id/adminPassEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:singleLine="true"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:layout_margin="10dp"
+        android:background="@android:color/white"
+        android:textColor="@android:color/black"
+        android:paddingBottom="15dp"/>
+
+    <Spinner
+        android:id="@+id/spinner_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:popupBackground="@android:color/white"
+        android:layout_margin="10dp"/>
+
+</LinearLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_transaksi">
+
+    <fragment
+        android:id="@+id/nav_transaksi"
+        android:name="com.rachman_warehouse.ui.transaksi.PemesananFragment"
+        android:label="@string/transaksi"
+        tools:layout="@layout/pemesanan_fragment" />
+
+    <fragment
+        android:id="@+id/nav_produk"
+        android:name="com.rachman_warehouse.ui.produk.ProdukFragment"
+        android:label="@string/produk"
+        tools:layout="@layout/produk_fragment" />
+
+    <fragment
+        android:id="@+id/nav_suplier"
+        android:name="com.rachman_warehouse.ui.suplier.SuplierFragment"
+        android:label="@string/suplier"
+        tools:layout="@layout/suplier_fragment" />
+
+
+    <fragment
+        android:id="@+id/nav_admin"
+        android:name="com.rachman_warehouse.ui.admin.AdminFragment"
+        android:label="@string/admin"
+        tools:layout="@layout/admin_fragment" />
+
+    <fragment
+        android:id="@+id/nav_laporan"
+        android:name="com.rachman_warehouse.ui.laporan.LaporanFragment"
+        android:label="@string/laporan"
+        tools:layout="@layout/laporan_fragment" />
+</navigation>

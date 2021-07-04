@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/txt_idDetail"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/adminNamaDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nama"
+        android:textSize="20dp"
+        android:layout_margin="10dp"
+        android:singleLine="true"
+        android:textColor="@android:color/black"
+        android:paddingBottom="15dp"/>
+
+    <TextView
+        android:id="@+id/adminUserDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Username"
+        android:textSize="20dp"
+        android:singleLine="true"
+        android:layout_margin="10dp"
+        android:textColor="@android:color/black"
+        android:paddingBottom="15dp"/>
+
+    <TextView
+        android:id="@+id/adminPassDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:singleLine="true"
+        android:textSize="20dp"
+        android:layout_margin="10dp"
+        android:textColor="@android:color/black"
+        android:paddingBottom="15dp"/>
+
+    <TextView
+        android:id="@+id/adminStatusDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Status"
+        android:singleLine="true"
+        android:textSize="20dp"
+        android:layout_margin="10dp"
+        android:textColor="@android:color/black"
+        android:paddingBottom="15dp"/>
+
+</LinearLayout>
