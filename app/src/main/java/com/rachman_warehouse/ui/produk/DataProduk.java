@@ -4,11 +4,11 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class DataProduk implements Parcelable {
-    String idbaranag,idsuplier,namasuplier,idlogin,namaadmin,barang,stok,hargabeli,hargajual;
+    String idbarang,idsuplier,namasuplier,idlogin,namaadmin,barang,stok,hargabeli,hargajual;
 
-    public DataProduk(String idbaranag, String idsuplier,String namasuplier, String idjenis
+    public DataProduk(String idbarang, String idsuplier,String namasuplier, String idjenis
             ,String jenisproduk, String idlogin, String namaadmin, String baranag, String stok, String hargabeli, String hargajual){
-        this.idbaranag = idbaranag;
+        this.idbarang = idbarang;
         this.idsuplier = idsuplier;
         this.namasuplier = namasuplier;
         this.idlogin = idlogin;
@@ -24,7 +24,7 @@ public class DataProduk implements Parcelable {
     }
 
     protected DataProduk(Parcel in) {
-        idbaranag = in.readString();
+        idbarang = in.readString();
         idsuplier = in.readString();
         namasuplier = in.readString();
         idlogin = in.readString();
@@ -37,7 +37,7 @@ public class DataProduk implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(idbaranag);
+        dest.writeString(idbarang);
         dest.writeString(idsuplier);
         dest.writeString(namasuplier);
         dest.writeString(idlogin);
@@ -65,8 +65,8 @@ public class DataProduk implements Parcelable {
         }
     };
 
-    public String getIdbaranag() {
-        return idbaranag;
+    public String getIdbarang() {
+        return idbarang;
     }
 
     public String getIdsuplier() {
@@ -101,8 +101,8 @@ public class DataProduk implements Parcelable {
         return hargajual;
     }
 
-    public void setIdbaranag(String idbaranag) {
-        this.idbaranag = idbaranag;
+    public void setIdbaranag(String idbarang) {
+        this.idbarang = idbarang;
     }
 
     public void setIdsuplier(String idsuplier) {

@@ -208,7 +208,7 @@ public class ListTransaksi extends AppCompatActivity implements SwipeRefreshLayo
         sp_produk.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
-                String pilih = dataProdukList.get(position).getIdbaranag();
+                String pilih = dataProdukList.get(position).getIdbarang();
                 produk_pilih = Integer.valueOf(pilih);
                 String hargaa = dataProdukList.get(position).getHargajual();
                 temp_harga = Integer.valueOf(hargaa);
@@ -377,7 +377,7 @@ public class ListTransaksi extends AppCompatActivity implements SwipeRefreshLayo
                             valueProduk = new ArrayList<String>();
                             valueHargaproduk = new ArrayList<String>();
                             for (int i = 0; i < dataProdukList.size(); i++) {
-                                valueIDproduk.add(dataProdukList.get(i).getIdbaranag());
+                                valueIDproduk.add(dataProdukList.get(i).getIdbarang());
                                 valueProduk.add(dataProdukList.get(i).getBarang());
                                 valueHargaproduk.add(dataProdukList.get(i).getHargajual());
                             }

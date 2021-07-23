@@ -12,13 +12,14 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     SharedPreferences sharedpreferences;
-    String id, username;
+    String id, username, name;
     Boolean session = false;
     public static final String session_status = "session_status";
     ConnectivityManager conMgr;
 
     public static final String TAG_ID = "id";
     public static final String TAG_USERNAME = "username";
+    public static final String TAG_NAME = "name";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,10 +42,12 @@ public class MainActivity extends AppCompatActivity {
 
         id = getIntent().getStringExtra(TAG_ID);
         username = getIntent().getStringExtra(TAG_USERNAME);
+        name = getIntent().getStringExtra(TAG_NAME);
 
         session = sharedpreferences.getBoolean(session_status, false);
         id = sharedpreferences.getString(TAG_ID, null);
         username = sharedpreferences.getString(TAG_USERNAME, null);
+        name = sharedpreferences.getString(TAG_NAME, null);
 
         Thread thread = new Thread(){
             public void run(){
@@ -60,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
                         Intent intent = new Intent(MainActivity.this, MenuAdmin.class);
                         intent.putExtra(TAG_ID, id);
                         intent.putExtra(TAG_USERNAME, username);
+                        intent.putExtra(TAG_NAME, name);
                         finish();
                         startActivity(intent);
 

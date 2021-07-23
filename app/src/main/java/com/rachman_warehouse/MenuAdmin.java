@@ -29,8 +29,8 @@ public class MenuAdmin extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     SharedPreferences sharedpreferences;
-    String id, username;
-    TextView txt_id, txt_username;
+    String id, username, name;
+    TextView txt_id, txt_username, txt_name;
     ImageButton imb;
     ConnectivityManager conMgr;
     Intent intent;
@@ -40,6 +40,7 @@ public class MenuAdmin extends AppCompatActivity {
 
     public static final String TAG_ID = "id";
     public static final String TAG_USERNAME = "username";
+    public static final String TAG_NAME = "name";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,9 +62,11 @@ public class MenuAdmin extends AppCompatActivity {
         session = sharedpreferences.getBoolean(session_status, false);
         id = sharedpreferences.getString(TAG_ID, null);
         username = sharedpreferences.getString(TAG_USERNAME, null);
+        name = sharedpreferences.getString(TAG_NAME, null);
 
         id = getIntent().getStringExtra(TAG_ID);
         username = getIntent().getStringExtra(TAG_USERNAME);
+        name = getIntent().getStringExtra(TAG_NAME);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -112,16 +115,19 @@ public class MenuAdmin extends AppCompatActivity {
         session = sharedpreferences.getBoolean(session_status, false);
         id = sharedpreferences.getString(TAG_ID, null);
         username = sharedpreferences.getString(TAG_USERNAME, null);
+        name = sharedpreferences.getString(TAG_NAME, null);
 
         txt_id = lay.findViewById(R.id.txt_id_admin);
         txt_username = lay.findViewById(R.id.txt_textView);
+        txt_name = lay.findViewById(R.id.txt_name_admin);
         imb = lay.findViewById(R.id.btn_exit);
 
         id = getIntent().getStringExtra(TAG_ID);
         username = getIntent().getStringExtra(TAG_USERNAME);
 
         txt_id.setText("ID : " + id);
-        txt_username.setText("STATUS : " + username);
+        txt_name.setText("Nama : " + name);
+        txt_username.setText("Status : " + username);
 
         imb.setOnClickListener(new View.OnClickListener() {
             @Override

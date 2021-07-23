@@ -24,11 +24,14 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.android.volley.NetworkResponse;
+import com.android.volley.ParseError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -42,6 +45,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -146,7 +150,7 @@ public class ProdukFragment extends Fragment implements SwipeRefreshLayout.OnRef
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view,final int position, long id) {
-                final String idproduk = dataProdukList.get(position).getIdbaranag();
+                final String idproduk = dataProdukList.get(position).getIdbarang();
                 final String nm_produk = dataProdukList.get(position).getBarang();
                 final CharSequence[] dialogitem = {"Tambah Stok","Detail","Delete"};
                 dialog = new AlertDialog.Builder(getContext());
@@ -184,6 +188,7 @@ public class ProdukFragment extends Fragment implements SwipeRefreshLayout.OnRef
         edit_id_barang.setText(null);
         edit_barang.setText(null);
         edit_stok.setText(null);
+        edit_id_login.setText(null);
         edit_harga_beli.setText(null);
         edit_harga_jual.setText(null);
     }
@@ -233,13 +238,15 @@ public class ProdukFragment extends Fragment implements SwipeRefreshLayout.OnRef
 
         if(!idProduk.isEmpty()){
             edit_id_barang.setText(idProduk);
-            edit_id_login.setText(idAdmin);
+//            edit_id_barang.setText("");
+            edit_id_login.setText(id);
             edit_barang.setText(namaProduk);
             edit_stok.setText(stokProduk);
             edit_harga_beli.setText(hargaBeli);
             edit_harga_jual.setText(hargaJual);
         }else {
             kosong();
+            edit_id_login.setText(id);
         }
 
         dialog.setPositiveButton(button, new DialogInterface.OnClickListener() {
@@ -247,14 +254,15 @@ public class ProdukFragment extends Fragment implements SwipeRefreshLayout.OnRef
             public void onClick(DialogInterface dialog, int i) {
                 id_barang = edit_id_barang.getText().toString();
                 id_suplier = suplier_pilih.toString();
-                id_login = id.toString();
+                id_login = edit_id_login.getText().toString();
                 barang = edit_barang.getText().toString();
                 stok = edit_stok.getText().toString();
                 harga_beli = edit_harga_beli.getText().toString();
                 harga_jual = edit_harga_jual.getText().toString();
 
-                detailBarang(id_barang);
+
                 simpan_update();
+//                detailBarang(id_barang);
                 dialog.dismiss();
             }
         });
@@ -420,14 +428,16 @@ public class ProdukFragment extends Fragment implements SwipeRefreshLayout.OnRef
     }
 
     private void simpan_update(){
-        String url;
+        String urlp;
 
         if(id_barang.isEmpty()){
-            url = url_insert;
+            urlp = url_insert;
         }else {
-            url = url_update;
+            urlp = url_update;
         }
-        StringRequest strReq = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+
+        StringRequest strReq = new StringRequest(Request.Method.POST, urlp, new Response.Listener<String>() {
+
             @Override
             public void onResponse(String response) {
                 Log.d(TAG, "Response: " + response.toString());
@@ -469,7 +479,7 @@ public class ProdukFragment extends Fragment implements SwipeRefreshLayout.OnRef
                 // jika id kosong maka simpan, jika id ada nilainya maka update
                 if (id_barang.isEmpty()){
                     params.put("perusahaan", id_suplier);
-                    params.put("nama", id_login);
+                    params.put("nama", id);
                     params.put("produk", barang);
                     params.put("stok", stok);
                     params.put("hargabeli", harga_beli);
@@ -477,7 +487,7 @@ public class ProdukFragment extends Fragment implements SwipeRefreshLayout.OnRef
                 } else {
                     params.put("id", id_barang);
                     params.put("perusahaan", id_suplier);
-                    params.put("nama", id_login);
+                    params.put("nama", id);
                     params.put("produk", barang);
                     params.put("stok", stok);
                     params.put("hargabeli", harga_beli);

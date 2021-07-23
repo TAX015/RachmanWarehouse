@@ -44,13 +44,14 @@ public class Login extends AppCompatActivity {
     private static final String TAG_SUCCESS = "success";
     private static final String TAG_MESSAGE = "message";
     public final static String TAG_ID = "id";
+    public final static String TAG_NAME = "name";
     public final static String TAG_USERNAME = "username";
 
     String tag_json_obj = "json_obj_req";
 
     SharedPreferences sharedpreferences;
     Boolean session = false;
-    String id, username;
+    String id, username, name;
     public static final String my_shared_preferences = "my_shared_preferences";
     public static final String session_status = "session_status";
     @Override
@@ -78,11 +79,13 @@ public class Login extends AppCompatActivity {
         session = sharedpreferences.getBoolean(session_status, false);
         id = sharedpreferences.getString(TAG_ID, null);
         username = sharedpreferences.getString(TAG_USERNAME, null);
+        name = sharedpreferences.getString(TAG_NAME, null);
 
         if (session) {
             intent = new Intent(Login.this, MenuAdmin.class);
             intent.putExtra(TAG_ID, id);
             intent.putExtra(TAG_USERNAME, username);
+            intent.putExtra(TAG_NAME, name);
             finish();
             startActivity(intent);
         }
@@ -133,6 +136,7 @@ public class Login extends AppCompatActivity {
                     if (success == 1) {
                         String username = jObj.getString(TAG_USERNAME);
                         String id = jObj.getString(TAG_ID);
+                        String name = jObj.getString(TAG_NAME);
 
                         Log.e("Successfully Login!", jObj.toString());
 
@@ -143,12 +147,14 @@ public class Login extends AppCompatActivity {
                         editor.putBoolean(session_status, true);
                         editor.putString(TAG_ID, id);
                         editor.putString(TAG_USERNAME, username);
+                        editor.putString(TAG_NAME, name);
                         editor.commit();
 
                         // Memanggil main activity
                         intent = new Intent(Login.this, MenuAdmin.class);
                         intent.putExtra(TAG_ID, id);
                         intent.putExtra(TAG_USERNAME, username);
+                        intent. putExtra(TAG_NAME, name);
                         finish();
                         startActivity(intent);
                     } else {
