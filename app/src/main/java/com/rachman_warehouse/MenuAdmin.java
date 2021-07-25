@@ -122,8 +122,8 @@ public class MenuAdmin extends AppCompatActivity {
         txt_name = lay.findViewById(R.id.txt_name_admin);
         imb = lay.findViewById(R.id.btn_exit);
 
-        id = getIntent().getStringExtra(TAG_ID);
-        username = getIntent().getStringExtra(TAG_USERNAME);
+//        id = getIntent().getStringExtra(TAG_ID);
+//        username = getIntent().getStringExtra(TAG_USERNAME);
 
         txt_id.setText("ID : " + id);
         txt_name.setText("Nama : " + name);

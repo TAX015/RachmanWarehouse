@@ -41,6 +41,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -103,6 +104,7 @@ public class SuplierFragment extends Fragment implements SwipeRefreshLayout.OnRe
         swipe = (SwipeRefreshLayout) root.findViewById(R.id.swipeRefreshAll);
         listView = (ListView) root.findViewById(R.id.listViewAll);
 
+        Collections.sort(dataSuplierList, new SuplierComparator());
         adapter = new AdapterSuplier(dataSuplierList,getContext());
         listView.setAdapter(adapter);
 
@@ -295,6 +297,8 @@ public class SuplierFragment extends Fragment implements SwipeRefreshLayout.OnRe
                                 dataSuplier.setJenisP(JKObject.getString("jenis"));
                                 dataSuplierList.add(dataSuplier);
                             }
+
+                            Collections.sort(dataSuplierList, new SuplierComparator());
                             listView.setAdapter(adapter);
                             adapter.notifyDataSetChanged();
                             swipe.setRefreshing(false);

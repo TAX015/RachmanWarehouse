@@ -112,8 +112,8 @@ public class ListTransaksi extends AppCompatActivity implements SwipeRefreshLayo
         session = sharedpreferences.getBoolean(session_status, false);
         id = sharedpreferences.getString(TAG_ID, null);
         username = sharedpreferences.getString(TAG_USERNAME, null);
-        id = getIntent().getStringExtra(TAG_ID);
-        username = getIntent().getStringExtra(TAG_USERNAME);
+//        id = getIntent().getStringExtra(TAG_ID);
+//        username = getIntent().getStringExtra(TAG_USERNAME);
         data_id = getIntent().getStringExtra("data_id");
         nama_pelanggan = getIntent().getStringExtra("pelanggan");
 
@@ -583,14 +583,24 @@ public class ListTransaksi extends AppCompatActivity implements SwipeRefreshLayo
         session = sharedpreferences.getBoolean(session_status, false);
         id = sharedpreferences.getString(TAG_ID, null);
         username = sharedpreferences.getString(TAG_USERNAME, null);
-        id = getIntent().getStringExtra(TAG_ID);
-        username = getIntent().getStringExtra(TAG_USERNAME);
-        if (session) {
-            intent = new Intent(ListTransaksi.this,MenuAdmin.class);
-            intent.putExtra(TAG_ID, id);
-            intent.putExtra(TAG_USERNAME, username);
-            finish();
-            startActivity(intent);
-        }
+//        id = getIntent().getStringExtra(TAG_ID);
+//        username = getIntent().getStringExtra(TAG_USERNAME);
+
+        new AlertDialog.Builder(this)
+                .setTitle("Selesai?")
+                .setMessage("Apa pembelian sudah benar?")
+                .setNegativeButton("tidak", null)
+                .setPositiveButton("ya", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        if (session) {
+                            intent = new Intent(ListTransaksi.this,MenuAdmin.class);
+                            intent.putExtra(TAG_ID, id);
+                            intent.putExtra(TAG_USERNAME, username);
+                            finish();
+//                            startActivity(intent);
+                        }
+                    }
+                }).create().show();
     }
 }

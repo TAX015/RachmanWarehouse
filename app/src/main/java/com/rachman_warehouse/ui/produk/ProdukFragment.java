@@ -47,6 +47,7 @@ import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -126,6 +127,7 @@ public class ProdukFragment extends Fragment implements SwipeRefreshLayout.OnRef
         swipe = (SwipeRefreshLayout) root.findViewById(R.id.swipeRefreshAll);
         listView = (ListView) root.findViewById(R.id.listViewAll);
 
+        Collections.sort(dataProdukList, new ProdukComparator());
         adapterProduk = new AdapterProduk(dataProdukList,getContext());
         listView.setAdapter(adapterProduk);
 
@@ -358,6 +360,7 @@ public class ProdukFragment extends Fragment implements SwipeRefreshLayout.OnRef
                                 dataProdukList.add(dataProduk);
                             }
 //                            adapter = new AdapterAdmin(dataAdminList,getContext());
+                            Collections.sort(dataProdukList, new ProdukComparator());
                             listView.setAdapter(adapterProduk);
                             adapterProduk.notifyDataSetChanged();
                             swipe.setRefreshing(false);

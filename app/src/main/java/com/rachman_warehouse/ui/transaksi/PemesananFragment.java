@@ -40,6 +40,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -112,6 +113,7 @@ public class PemesananFragment extends Fragment implements SwipeRefreshLayout.On
         swipe = (SwipeRefreshLayout) root.findViewById(R.id.swipeRefreshAll);
         listView = (ListView) root.findViewById(R.id.listViewAll);
 
+        Collections.sort(dataPemesananList, new TransaksiComparator().reversed());
         adapterPemesanan = new AdapterPemesanan(dataPemesananList,getContext());
         listView.setAdapter(adapterPemesanan);
 
@@ -281,6 +283,7 @@ public class PemesananFragment extends Fragment implements SwipeRefreshLayout.On
                                 dataPemesananList.add(dataPemesanan);
                             }
 //                            adapter = new AdapterAdmin(dataAdminList,getContext());
+                            Collections.sort(dataPemesananList, new TransaksiComparator().reversed());
                             listView.setAdapter(adapterPemesanan);
                             adapterPemesanan.notifyDataSetChanged();
                             swipe.setRefreshing(false);
